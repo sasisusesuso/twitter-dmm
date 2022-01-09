@@ -26,11 +26,6 @@ class Scraping:
     ## DMMAPIよりスクレイピングして情報取得
     ##
     def get_dmm_info(self):
-        # 初期化
-        title = ''
-        url = ''
-        price = ''
-
         # インスタンスを作成
         api = dmm.API(api_id=API_ID, affiliate_id=AFFILIATE_ID)
 
