@@ -7,21 +7,15 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # トークン等取得
-# AK = os.environ.get('TWITTER_DOT_API_KEY')
-# AS = os.environ.get('TWITTER_DOT_API_SECRET_KEY')
-# AT = os.environ.get('TWITTER_DOT_ACCESS_TOKEN')
-# ATS = os.environ.get('TWITTER_DOT_ACCESS_TOKEN_SECRET')
-# BT = os.environ.get('TWITTER_DOT_BEARER_TOKEN')
-AK = config.TWITTER_DMM_API_KEY
-AS = config.TWITTER_DMM_API_SECRET_KEY
-AT = config.TWITTER_DMM_ACCESS_TOKEN
-ATS = config.TWITTER_DMM_ACCESS_TOKEN_SECRET
-BT = config.TWITTER_DMM_BEARER_TOKEN
+AK = os.environ['TWITTER_DMM_API_KEY']
+AS = os.environ['TWITTER_DMM_API_SECRET_KEY']
+AT = os.environ['TWITTER_DMM_ACCESS_TOKEN']
+ATS = os.environ['TWITTER_DMM_ACCESS_TOKEN_SECRET']
+BT = os.environ['TWITTER_DMM_BEARER_TOKEN']
 
 
 # Twitterオブジェクトの生成
 client = tweepy.Client(BT, AK, AS, AT, ATS)
-twitter_api =  OAuth1Session(AK, AS, AT, ATS)
 
 class Twitter:
     def __init__(self, title, price, url):
