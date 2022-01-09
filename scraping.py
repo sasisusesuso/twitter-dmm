@@ -26,6 +26,8 @@ AS = config.TWITTER_DMM_API_SECRET_KEY
 AT = config.TWITTER_DMM_ACCESS_TOKEN
 ATS = config.TWITTER_DMM_ACCESS_TOKEN_SECRET
 BT = config.TWITTER_DMM_BEARER_TOKEN
+API_ID = os.environ['API_ID']
+AFFILIATE_ID = os.environ['AFFILIATE_ID']
 
 
 class Scraping:
@@ -40,7 +42,7 @@ class Scraping:
         price = ''
 
         # インスタンスを作成
-        api = dmm.API(api_id=config.API_ID, affiliate_id=config.AFFILIATE_ID)
+        api = dmm.API(api_id=API_ID, affiliate_id=AFFILIATE_ID)
 
         # DMMAPI叩く
         res = api.item_search(site="FANZA", hits=3, keyword=config.KEYWORD, sort=config.SORT)
