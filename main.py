@@ -13,7 +13,7 @@ def main():
         twitter = tw.Twitter(title, price, url)
         twitter.tweet_dmm_info() 
 
-    except Exception    as e:
+    except Exception as e:
         print(e)
         
         # エラー内容LINE通知
